@@ -1,0 +1,42 @@
+& {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  background: url(../src/wallpaper.jpg) center;
+  background-size: cover;
+  color: white;
+  position: relative;
+  .body {
+    margin: auto;
+  }
+  p {
+    font-size: 1.5em;
+    color: transparent;
+    &::selection {
+      color: transparent;
+      background: transparent;
+    }
+    span {
+      border-left: 1px solid;
+      color: white;
+    }
+  }
+  svg {
+    position: absolute;
+    bottom: 15px;
+    fill: white;
+    transform: rotate(270deg) scale(1.8);
+    cursor: pointer;
+    &:hover {
+      path:last-of-type {
+        transform: translate(26%);
+      }
+    }
+    path:last-of-type {
+      transition: 1s all;
+      &:hover{
+        transform: translate(26%);
+      }
+    }
+  }
+}

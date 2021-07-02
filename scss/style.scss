@@ -1,0 +1,100 @@
+@import url("https://fonts.googleapis.com/css2?family=Cairo:wght@200;400;700&display=swap");
+// colors
+$main-color: #222831;
+$sec-color: #393e46;
+$c3-color: #00adb5;
+$c4-color: #eee;
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+.bu {
+  cursor: pointer;
+  background-color: $c3-color;
+  border: none;
+  color: $c4-color;
+  padding: 12px 30px;
+  font-size: 20px;
+  margin: 5px;
+  border-radius: 5px;
+}
+body {
+  font-family: "Cairo", sans-serif;
+  height: 100vh;
+}
+ul {
+  list-style: none;
+}
+a {
+  color: inherit !important;
+  text-decoration: none;
+}
+section:not(.landing-page) {
+  margin: 0 auto 20px;
+  h1 {
+    border-bottom: $c3-color 5px solid;
+    width: max-content;
+  }
+}
+.container {
+  width: 100%;
+  margin-right: auto;
+  margin-left: auto;
+}
+@media (max-width: 576px) {
+  .container {
+    margin: 0;
+    padding: 0;
+  }
+}
+@media (min-width: 576px) {
+  .container {
+    max-width: 540px;
+  }
+}
+@media (min-width: 768px) {
+  .container {
+    max-width: 720px;
+  }
+}
+@media (min-width: 992px) {
+  .container {
+    max-width: 960px;
+  }
+}
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1140px;
+  }
+}
+@media (min-width: 1400px) {
+  .container {
+    max-width: 1320px;
+  }
+}
+header nav {
+  @import "./components/nav";
+}
+.landing-page {
+  @import "./page/landing-page";
+}
+.row {
+  display: flex;
+}
+.doc-page {
+  @import "./page/doc-page";
+}
+.why-page {
+  @import "./page/why-page";
+}
+.studio-page {
+  @import "./page/studio-page";
+}
+footer {
+  text-align: center;
+  background: $c3-color;
+  color: #eee;
+  padding: 10px;
+}
