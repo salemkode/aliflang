@@ -4,49 +4,73 @@ $main-color: #222831;
 $sec-color: #393e46;
 $c3-color: #00adb5;
 $c4-color: #eee;
-
 * {
   box-sizing: border-box;
   padding: 0;
   margin: 0;
 }
-.bu {
-  cursor: pointer;
-  background-color: $c3-color;
-  border: none;
-  color: $c4-color;
-  padding: 12px 30px;
-  font-size: 20px;
-  margin: 5px;
-  border-radius: 5px;
-}
 body {
   font-family: "Cairo", sans-serif;
   height: 100vh;
 }
-ul {
-  list-style: none;
-}
-a {
-  color: inherit !important;
-  text-decoration: none;
-}
+@import "./components/main";
 section:not(.landing-page) {
-  margin: 0 auto 20px;
+  padding: 10px 0 60px 0;
   h1 {
+    margin-bottom: 40px;
     border-bottom: $c3-color 5px solid;
     width: max-content;
   }
 }
-.container {
-  width: 100%;
-  margin-right: auto;
-  margin-left: auto;
+header nav {
+  @import "./components/nav";
 }
-@media (max-width: 576px) {
+.landing-page {
+  @import "./page/landing-page";
+}
+.col-3-page{
+  @import "./page/doc-page";
+}
+.why-page {
+  @import "./page/why-page";
+}
+footer {
+  text-align: center;
+  background: $c3-color;
+  color: #eee;
+  padding: 10px;
+}
+@media (max-width: 575px) {
   .container {
-    margin: 0;
+    width: calc(100% - 15px);
+    margin: 0 auto;
     padding: 0;
+  }
+  section:not(.landing-page) {
+    padding: 10px 0 40px 0;
+    h1{
+      font-size: 21px;
+      margin: 10px auto;
+    }
+  }
+  .col-3-page .row {
+    flex-direction: column-reverse;
+    div {
+      width: 90%;
+      margin: auto;
+    }
+    .bu{
+      margin: 15px auto 0;
+    }
+
+  }
+  .why-page {
+    .row{
+      flex-direction: column;
+      h2{
+        text-align: center;
+      }
+    }
   }
 }
 @media (min-width: 576px) {
@@ -73,28 +97,4 @@ section:not(.landing-page) {
   .container {
     max-width: 1320px;
   }
-}
-header nav {
-  @import "./components/nav";
-}
-.landing-page {
-  @import "./page/landing-page";
-}
-.row {
-  display: flex;
-}
-.doc-page {
-  @import "./page/doc-page";
-}
-.why-page {
-  @import "./page/why-page";
-}
-.studio-page {
-  @import "./page/studio-page";
-}
-footer {
-  text-align: center;
-  background: $c3-color;
-  color: #eee;
-  padding: 10px;
 }

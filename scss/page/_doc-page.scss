@@ -3,7 +3,6 @@
     height: 100%;
     > * {
       width: 50%;
-      height: 100%;
     }
   }
   img {
@@ -12,7 +11,7 @@
     margin: auto;
   }
   button {
-    margin: 10px auto;
+    margin: auto auto 10px auto;
     display: block;
   }
   .left {
@@ -21,8 +20,8 @@
     margin: auto;
   }
   .right {
-    height: max-content;
-    margin: auto;
+    display: flex;
+    flex-direction: column;
     font-size: 1.4em;
     line-height: 1.4em;
   }

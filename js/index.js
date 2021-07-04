@@ -58,9 +58,9 @@ let subtitile = new write(words, document.querySelector("#subHead"), 300);
 function wait(milliseconds) {
   return new Promise(resolve => setTimeout(resolve, milliseconds));
 }
-document
-  .querySelectorAll("nav li")
-  .forEach(e => (e.innerHTML += "<span>" + e.dataset.name + "</span>"));
 
-eva.replace();
 document.querySelector("#date").innerHTML = new Date().getFullYear();
+document.querySelector("#down").onclick = function(){
+  let to = document.body.offsetHeight - document.querySelector("nav").offsetHeight;
+  window.scrollTo(0,to);
+}
