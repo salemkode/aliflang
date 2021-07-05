@@ -2,34 +2,107 @@
   z-index: 100000022222;
   position: fixed;
   top: 0;
-  right: 0;
-  left: 0;
+  width: 100%;
   display: flex;
+  color: $c4-color;
+  background: $main-color;
+  padding: 10px;
+  box-shadow: 0 2px 4px 0 rgba(0,0,0,.8);
+  .phones {
+    display: none;
+    overflow: hidden;
+    transition: all 1s;
+  }
+  .more {
+    display: none;
+    gap: 3px;
+    align-items: center;
+    position: absolute;
+    right: -20px;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    cursor: pointer;
+  }
+  > * {
+    width: calc(100% / 3);
+  }
+  ul {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+  }
+  .category {
+    justify-content: flex-end;
+    margin-top: -3px;
+    a {
+      padding: 3px 4px;
+      border-radius: 5px;
+      &:hover {
+        color: white;
+        background: gray;
+      }
+    }
+  }
+  svg {
+    width: 30px;
+  }
+  img {
+    width: 40px;
+  }
+  .logo {
+    display: flex;
+    justify-content: center;
+    position: relative;
+  }
+  svg:hover {
+    --color: #{$c3-color};
+  }
+}
+/*& {
+ 
   justify-content: space-between;
-  background: $sec-color;
+  background: $main-color;
+  > * {
+    width: 33.333333333333333333333333333333333333333333333333333333333333333333%;
+  }
   * {
     color: $c4-color;
   }
+
   .logo {
     margin: 10px;
     padding: 3px;
+
     img {
       width: 40px;
     }
   }
+
   ul {
     display: flex;
     margin: auto 10px;
     justify-content: flex-end;
     align-items: center;
+
     li {
       margin: 5px;
       font-size: 17px;
-      width: 80px;
       a {
         margin: 5px;
         display: block;
         text-align: center;
+      }
+    }
+    svg {
+      width: 30px;
+      &:hover{
+        --color: #{$c3-color};
+      }
+    }
+    &.category li {
+      width: 80px;
+      a:hover {
+        color: white;
       }
       &:hover {
         background: gray;
@@ -38,3 +111,4 @@
     }
   }
 }
+*/

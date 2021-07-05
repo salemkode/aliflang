@@ -64,3 +64,18 @@ document.querySelector("#down").onclick = function(){
   let to = document.body.offsetHeight - document.querySelector("nav").offsetHeight;
   window.scrollTo(0,to);
 }
+let style = document.querySelector(".phones").style;
+let runMore = false;
+style.height = "0px"
+document.querySelector("#more").onclick = async function(){
+  if(runMore) return; 
+  runMore =  !runMore;
+  if(style.height === "0px"){
+    style.height = "261.8px"
+    await wait(1000);
+  }else {
+    style.height = "0px"
+    await wait(1000);
+  }
+  runMore =  !runMore;
+}

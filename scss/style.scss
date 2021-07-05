@@ -22,13 +22,13 @@ section:not(.landing-page) {
     width: max-content;
   }
 }
-header nav {
+nav {
   @import "./components/nav";
 }
 .landing-page {
   @import "./page/landing-page";
 }
-.col-3-page{
+.col-3-page {
   @import "./page/doc-page";
 }
 .why-page {
@@ -36,46 +36,79 @@ header nav {
 }
 footer {
   text-align: center;
-  background: $c3-color;
+  background: $main-color;
   color: #eee;
   padding: 10px;
 }
-@media (max-width: 575px) {
+@media (max-width: 768px) {
   .container {
-    width: calc(100% - 15px);
+    width: 95%;
     margin: 0 auto;
     padding: 0;
   }
   section:not(.landing-page) {
     padding: 10px 0 40px 0;
-    h1{
+    h1 {
       font-size: 21px;
       margin: 10px auto;
     }
   }
+nav {
+    flex-direction: column-reverse;
+    > * {
+      width: 100%;
+      justify-content: center;
+    }
+    > ul {
+      display: none;
+    }
+    .phones {
+      display: block;
+    }
+    .more {
+      display: flex;
+    }
+    .logo {
+      order: 2;
+    }
+    .category {
+      flex-direction: column;
+      margin: 15px auto;
+      li {
+        width: 100%;
+      }
+      a {
+        display: block;
+        text-align: center;
+        padding: 10px;
+        border-radius: 2px;
+      }
+    }
+    .social {
+      justify-content: space-around;
+    }
+  } 
   .col-3-page .row {
     flex-direction: column-reverse;
     div {
       width: 90%;
       margin: auto;
     }
-    .bu{
+    .bu {
       margin: 15px auto 0;
     }
-
   }
   .why-page {
-    .row{
+    .container {
+      width: 90%;
+    }
+    .row {
       flex-direction: column;
-      h2{
+      gap: 2rem;
+      h2 {
         text-align: center;
       }
     }
-  }
-}
-@media (min-width: 576px) {
-  .container {
-    max-width: 540px;
   }
 }
 @media (min-width: 768px) {

@@ -51,8 +51,11 @@ ul {
 }
 
 a {
-  color: inherit !important;
+  color: inherit;
   text-decoration: none;
+}
+a:hover {
+  color: #00adb5;
 }
 
 section:not(.landing-page) {
@@ -64,45 +67,121 @@ section:not(.landing-page) h1 {
   width: max-content;
 }
 
-header nav {
+nav {
+  /*& {
+
+    justify-content: space-between;
+    background: $main-color;
+    > * {
+      width: 33.333333333333333333333333333333333333333333333333333333333333333333%;
+    }
+    * {
+      color: $c4-color;
+    }
+
+    .logo {
+      margin: 10px;
+      padding: 3px;
+
+      img {
+        width: 40px;
+      }
+    }
+
+    ul {
+      display: flex;
+      margin: auto 10px;
+      justify-content: flex-end;
+      align-items: center;
+
+      li {
+        margin: 5px;
+        font-size: 17px;
+        a {
+          margin: 5px;
+          display: block;
+          text-align: center;
+        }
+      }
+      svg {
+        width: 30px;
+        &:hover{
+          --color: #00adb5;
+        }
+      }
+      &.category li {
+        width: 80px;
+        a:hover {
+          color: white;
+        }
+        &:hover {
+          background: gray;
+          border-radius: 5px;
+        }
+      }
+    }
+  }
+  */
+}
+nav {
   z-index: 100000022222;
   position: fixed;
   top: 0;
-  right: 0;
-  left: 0;
+  width: 100%;
   display: flex;
-  justify-content: space-between;
-  background: #393e46;
-}
-header nav * {
   color: #eee;
+  background: #222831;
+  padding: 10px;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.8);
 }
-header nav .logo {
-  margin: 10px;
-  padding: 3px;
+nav .phones {
+  display: none;
+  overflow: hidden;
+  transition: all 1s;
 }
-header nav .logo img {
+nav .more {
+  display: none;
+  gap: 3px;
+  align-items: center;
+  position: absolute;
+  right: -20px;
+  transform: translate(-50%, -50%);
+  top: 50%;
+  cursor: pointer;
+}
+nav > * {
+  width: calc(100% / 3);
+}
+nav ul {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+nav .category {
+  justify-content: flex-end;
+  margin-top: -3px;
+}
+nav .category a {
+  padding: 3px 4px;
+  border-radius: 5px;
+}
+nav .category a:hover {
+  color: white;
+  background: gray;
+}
+nav svg {
+  width: 30px;
+}
+nav img {
   width: 40px;
 }
-header nav ul {
+nav .logo {
   display: flex;
-  margin: auto 10px;
-  justify-content: flex-end;
-  align-items: center;
+  justify-content: center;
+  position: relative;
 }
-header nav ul li {
-  margin: 5px;
-  font-size: 17px;
-  width: 80px;
-}
-header nav ul li a {
-  margin: 5px;
-  display: block;
-  text-align: center;
-}
-header nav ul li:hover {
-  background: gray;
-  border-radius: 5px;
+nav svg:hover {
+  --color: #00adb5;
 }
 
 .landing-page {
@@ -192,14 +271,14 @@ header nav ul li:hover {
 
 footer {
   text-align: center;
-  background: #00adb5;
+  background: #222831;
   color: #eee;
   padding: 10px;
 }
 
-@media (max-width: 575px) {
+@media (max-width: 768px) {
   .container {
-    width: calc(100% - 15px);
+    width: 95%;
     margin: 0 auto;
     padding: 0;
   }
@@ -210,6 +289,42 @@ footer {
   section:not(.landing-page) h1 {
     font-size: 21px;
     margin: 10px auto;
+  }
+
+  nav {
+    flex-direction: column-reverse;
+  }
+  nav > * {
+    width: 100%;
+    justify-content: center;
+  }
+  nav > ul {
+    display: none;
+  }
+  nav .phones {
+    display: block;
+  }
+  nav .more {
+    display: flex;
+  }
+  nav .logo {
+    order: 2;
+  }
+  nav .category {
+    flex-direction: column;
+    margin: 15px auto;
+  }
+  nav .category li {
+    width: 100%;
+  }
+  nav .category a {
+    display: block;
+    text-align: center;
+    padding: 10px;
+    border-radius: 2px;
+  }
+  nav .social {
+    justify-content: space-around;
   }
 
   .col-3-page .row {
@@ -223,16 +338,15 @@ footer {
     margin: 15px auto 0;
   }
 
+  .why-page .container {
+    width: 90%;
+  }
   .why-page .row {
     flex-direction: column;
+    gap: 2rem;
   }
   .why-page .row h2 {
     text-align: center;
-  }
-}
-@media (min-width: 576px) {
-  .container {
-    max-width: 540px;
   }
 }
 @media (min-width: 768px) {
