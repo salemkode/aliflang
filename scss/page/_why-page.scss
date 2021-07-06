@@ -4,7 +4,9 @@
   padding-bottom: 40px;
   .row {
     margin: auto;
-    gap: 4rem;
+    > *:nth-child(2) {
+      margin: 0 4rem;
+    }
     div {
       h2 {
         margin: 0.67em auto 40px;

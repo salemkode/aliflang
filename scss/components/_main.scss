@@ -27,6 +27,12 @@ html {
   font-size: 20px;
   margin: 5px;
   border-radius: 5px;
+  &:hover{
+    background: $main-color;
+  }
+  a:hover{
+    color: $c4-color;
+  }
 }
 ul {
   list-style: none;

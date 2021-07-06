@@ -22,7 +22,7 @@ section:not(.landing-page) {
     width: max-content;
   }
 }
-nav {
+header {
   @import "./components/nav";
 }
 .landing-page {
@@ -46,6 +46,19 @@ footer {
     margin: 0 auto;
     padding: 0;
   }
+  header .navbar {
+    flex-direction: column;
+    ul{
+        height: var(--height);
+        flex-direction: column;
+    }
+    .hamburger{
+      display: flex;
+    }
+    > * {
+      width: 100%;
+    }
+  }
   section:not(.landing-page) {
     padding: 10px 0 40px 0;
     h1 {
@@ -53,41 +66,6 @@ footer {
       margin: 10px auto;
     }
   }
-nav {
-    flex-direction: column-reverse;
-    > * {
-      width: 100%;
-      justify-content: center;
-    }
-    > ul {
-      display: none;
-    }
-    .phones {
-      display: block;
-    }
-    .more {
-      display: flex;
-    }
-    .logo {
-      order: 2;
-    }
-    .category {
-      flex-direction: column;
-      margin: 15px auto;
-      li {
-        width: 100%;
-      }
-      a {
-        display: block;
-        text-align: center;
-        padding: 10px;
-        border-radius: 2px;
-      }
-    }
-    .social {
-      justify-content: space-around;
-    }
-  } 
   .col-3-page .row {
     flex-direction: column-reverse;
     div {
@@ -104,7 +82,12 @@ nav {
     }
     .row {
       flex-direction: column;
-      gap: 2rem;
+      > *:nth-child(2) {
+        margin: 4rem 0;
+      }
+      > * {
+        margin-right: 2rem;
+      }
       h2 {
         text-align: center;
       }
