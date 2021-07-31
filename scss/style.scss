@@ -34,6 +34,9 @@ header {
 .why-page {
   @import "./page/why-page";
 }
+.quote-page {
+  @import "./page/quote-page";
+}
 footer {
   text-align: center;
   background: $main-color;

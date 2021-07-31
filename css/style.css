@@ -240,6 +240,37 @@ header .navbar .hamburger.active .bar:nth-child(3) {
   font-size: 1.2em;
 }
 
+.quote-page img {
+  width: 40px;
+  display: block;
+}
+.quote-page img.end-quote {
+  margin-right: auto;
+  transform: rotate(180deg);
+}
+.quote-page a {
+  display: block;
+}
+.quote-page blockquote {
+  border-right: solid 4px #dbdbdb;
+  margin: 0 0em 2em 0;
+  padding: 0.5em 1em 0.5em 0;
+  font-size: 24px;
+  font-weight: bold;
+  line-height: 1.5;
+  position: relative;
+}
+.quote-page blockquote::before {
+  content: "";
+  background: url(../src/quote.svg) no-repeat center;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  object-fit: contain;
+  z-index: -1;
+  opacity: 0.2;
+}
+
 footer {
   text-align: center;
   background: #222831;
