@@ -268,7 +268,7 @@ header .navbar .hamburger.active .bar:nth-child(3) {
   width: 100%;
   object-fit: contain;
   z-index: -1;
-  opacity: 0.2;
+  opacity: 0.1;
 }
 
 footer {
