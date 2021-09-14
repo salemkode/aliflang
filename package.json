@@ -2,7 +2,7 @@
   "name": "aliflang",
   "version": "0.0.0",
   "scripts": {
-    "dev": "vite ./src",
+    "dev": "vite",
     "build": "vite build",
     "serve": "vite preview"
   },
