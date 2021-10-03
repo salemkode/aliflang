@@ -1,6 +1,6 @@
 module.exports = {
     root: './',
-    base : 'https://superastorh.github.io/aliflang/',
+    base : 'https://salemkode.github.io/aliflang/',
     build: {
         outDir: 'dist',
     },
